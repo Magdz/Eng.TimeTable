@@ -1,0 +1,5 @@
+/* Make input tag border transparent */
+input.transparent-input{
+       background-color:rgba(0,0,0,0) !important;
+       border:none !important;
+}

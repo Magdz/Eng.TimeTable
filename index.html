@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Engineering Time Table</title>
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="style sheet.css">
+
+</head>
+
+<body>
+	
+	<!-- JavaScript -->
+	<script type="text/javascript" src="table script.js"></script>
+
+	<!-- Content of Table's Column -->
+	<div id="ColumnContent" style="display: none;">
+		<input type='text' placeholder='Subject' class="form-control">
+		<select class="form-control">
+			<option value="Lecture">Lecture</option>
+			<option value="Tutorial">Tutorial</option>
+			<option value="Lab">Lab</option>
+		</select>
+	</div>
+
+	<!-- The Time Table -->
+	<table class="table table-bordered">
+	  <thead>
+	    <tr>
+	      <th></th>
+	      <th>8:30 to 10:00</th>
+	      <th>10:10 to 11:40</th>
+	      <th>11:50 to 1:20</th>
+	      <th>1:40 to 3:10</th>
+	      <th>3:20 to 4:50</th>
+	      <th>5:00 to 6:30</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">Saturday</th>
+	      <script>TableColumn();</script>
+	    </tr>
+	    <tr>
+	      <th scope="row">Sunday</th>
+	      <script>TableColumn();</script>
+	    </tr>
+	    <tr>
+	      <th scope="row">Monday</th>
+	      <script>TableColumn();</script>
+	    </tr>
+	    <tr>
+	      <th scope="row">Tuesday</th>
+	      <script>TableColumn();</script>
+	    </tr>
+	    <tr>
+	      <th scope="row">Wednesday</th>
+	      <script>TableColumn();</script>
+	    </tr>
+	    <tr>
+	      <th scope="row">Thursday</th>
+	      <script>TableColumn();</script>
+	    </tr>
+	  </tbody>
+	</table>
+</body>
+</html>
