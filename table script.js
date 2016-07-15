@@ -1,6 +1,12 @@
-function TableColumn(){
-	var block = document.getElementById("ColumnContent").innerHTML
+function TableColumn(day){
+	var block = document.getElementById("ColumnContent").innerHTML;
 	for(var i = 0; i < 6; ++i){
-		document.write("<td>" + block + "</td>");
+		var cell = "<td id="+ (day+i) +">" + block + "</td>";
+		document.write(cell);
 	}
+}
+
+function getSubject(){
+	var data = $('#Sat0').find('#Subject').val();
+	$('#Sat1').find('#Subject').val(data);
 }

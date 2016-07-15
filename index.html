@@ -14,18 +14,24 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<!-- some of Google Web Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Slabo+27px|Oswald|Ubuntu:400,500,700|Droid+Serif:400,700|Merriweather:400,700,900' rel='stylesheet' type='text/css'>
 	<!-- Social Buttons -->
 	<link rel="stylesheet" href="https://cdn.rawgit.com/lipis/bootstrap-social/gh-pages/bootstrap-social.css">
+
 
 	<!-- Style Sheet -->
 	<link rel="stylesheet" type="text/css" href="style sheet.css">
 
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="table script.js"></script>
+
 </head>
 
 <body>
-	
-	<!-- JavaScript -->
-	<script type="text/javascript" src="table script.js"></script>
 
 	<!-- Navigation bar -->
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -34,11 +40,9 @@
 		      <a class="btn navbar-brand">Welcome to the Engineering Time Table</a>
 		    </div>
 		    <ul class="nav navbar-nav navbar-right">
+		    	<li><a class="page-scroll" href="#view">View Table</a></li>
 		    	<li>
-		    		<a href="https://github.com/Magdz/Eng.TimeTable" target="_blank" class="btn btn-block btn-social btn-lg">
-					  <span class="fa fa-github"></span>
-					  View on Github
-					</a>
+		    		<a href="https://github.com/Magdz/Eng.TimeTable" target="_blank" class="btn btn-block btn-social btn-lg"><span class="fa fa-github"></span>View on Github</a>
 		    	</li>
 		    </ul>
 		</div>
@@ -46,54 +50,64 @@
 
 	<!-- Content of Table's Column -->
 	<div id="ColumnContent" style="display: none;">
-		<input type='text' placeholder='Subject' class="form-control">
-		<select class="form-control">
+		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject()">
+		<select id="Period-Type" class="form-control">
 			<option value="Lecture">Lecture</option>
 			<option value="Tutorial">Tutorial</option>
 			<option value="Lab">Lab</option>
 		</select>
-		<input type="text" placeholder="Place" class="form-control">
+		<input id="Place" type="text" placeholder="Place" class="form-control">
 	</div>
 
 	<!-- The Time Table -->
-	<table class="table table-bordered">
-	  <thead>
-	    <tr>
-	      <th></th>
-	      <th>8:30 to 10:00</th>
-	      <th>10:10 to 11:40</th>
-	      <th>11:50 to 1:20</th>
-	      <th>1:40 to 3:10</th>
-	      <th>3:20 to 4:50</th>
-	      <th>5:00 to 6:30</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <th scope="row">Saturday</th>
-	      <script>TableColumn();</script>
-	    </tr>
-	    <tr>
-	      <th scope="row">Sunday</th>
-	      <script>TableColumn();</script>
-	    </tr>
-	    <tr>
-	      <th scope="row">Monday</th>
-	      <script>TableColumn();</script>
-	    </tr>
-	    <tr>
-	      <th scope="row">Tuesday</th>
-	      <script>TableColumn();</script>
-	    </tr>
-	    <tr>
-	      <th scope="row">Wednesday</th>
-	      <script>TableColumn();</script>
-	    </tr>
-	    <tr>
-	      <th scope="row">Thursday</th>
-	      <script>TableColumn();</script>
-	    </tr>
-	  </tbody>
-	</table>
+	<div class="table-responsive">
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th></th>
+		      <th>8:30 to 10:00</th>
+		      <th>10:10 to 11:40</th>
+		      <th>11:50 to 1:20</th>
+		      <th>1:40 to 3:10</th>
+		      <th>3:20 to 4:50</th>
+		      <th>5:00 to 6:30</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th scope="row">Saturday</th>
+		      <script>TableColumn("Sat");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Sunday</th>
+		      <script>TableColumn("Sun");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Monday</th>
+		      <script>TableColumn("Mon");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Tuesday</th>
+		      <script>TableColumn("Tue");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Wednesday</th>
+		      <script>TableColumn("Wed");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Thursday</th>
+		      <script>TableColumn("Thu");</script>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+
+	<hr>
+
+	<!-- The Canvas -->
+	<div id="view" class="raw">
+		<h3 class="title">The Time Table as an Image</h3>
+		<canvas id="canvas" class="well"></canvas>
+	</div>
 </body>
 </html>

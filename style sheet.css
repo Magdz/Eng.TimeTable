@@ -3,3 +3,20 @@ input.transparent-input{
        background-color:rgba(0,0,0,0) !important;
        border:none !important;
 }
+
+canvas{
+  	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 1080px;
+    height: 566px;
+}
+
+h3.title{
+	margin-left: 20px;
+	font-family: 'Droid Serif', serif;
+	font-weight: 700;
+	text-decoration: underline;
+}
