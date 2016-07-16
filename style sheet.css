@@ -22,9 +22,29 @@ h3.title{
 }
 
 a#download{
-    width:150px; 
+    width: 150px; 
     margin: -20px -50px; 
     position: relative;
     top:50%; 
     left:50%;
+}
+
+table#edit-table{
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1300px;
+}
+
+table#edit-table td{
+	height: 100px;
+}
+
+table#preview-table{
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+	width: 1080px;
 }

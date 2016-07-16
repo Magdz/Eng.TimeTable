@@ -48,11 +48,11 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="btn navbar-brand">Welcome to the Engineering Time Table</a>
+		      <a class="btn navbar-brand" href="/eng.timetable">Welcome to the Engineering Time Table</a>
 		    </div>
 		    <ul class="nav navbar-nav navbar-right">
-		    	<li><a class="page-scroll" href="#view">View Table</a></li>
-		    	<li><a class="page-scroll" href="#download">Download Table</a></li>
+		    	<li><a class="page-scroll" href="#preview">Preview</a></li>
+		    	<li><a class="page-scroll" href="#download">Download</a></li>
 		    	<li>
 		    		<a href="https://github.com/Magdz/Eng.TimeTable" target="_blank" class="btn btn-block btn-social btn-lg"><span class="fa fa-github"></span>View on Github</a>
 		    	</li>
@@ -60,20 +60,21 @@
 		</div>
 	</nav>
 
-	<!-- Content of Table's Column -->
+	<!-- Content of Edit-Table's Column -->
 	<div id="ColumnContent" style="display: none;">
-		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject()">
-			<select id="Period-Type" class="form-control">
+		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject(this)">
+			<select id="Period-Type" class="form-control" onchange="getType(this)">
+				<option value="" selected="selected">Select Period Type</option>
 				<option value="Lecture">Lecture</option>
 				<option value="Tutorial">Tutorial</option>
 				<option value="Lab">Lab</option>
 			</select>	
-		<input id="Place" type="text" placeholder="Place" class="form-control">
+		<input id="Place" type="text" placeholder="Place" class="form-control" onkeypress="getPlace(this)">
 	</div>
 
-	<!-- The Time Table -->
+	<!-- Edit Time Table -->
 	<div class="table-responsive">
-		<table id="table" class="table table-bordered">
+		<table id="edit-table" class="table table-bordered">
 		  <thead>
 		    <tr>
 		      <th></th>
@@ -88,27 +89,27 @@
 		  <tbody>
 		    <tr>
 		      <th scope="row">Saturday</th>
-		      <script>TableColumn("Sat");</script>
+		      <script>TableColumn("Sat", "ColumnContent");</script>
 		    </tr>
 		    <tr>
 		      <th scope="row">Sunday</th>
-		      <script>TableColumn("Sun");</script>
+		      <script>TableColumn("Sun", "ColumnContent");</script>
 		    </tr>
 		    <tr>
 		      <th scope="row">Monday</th>
-		      <script>TableColumn("Mon");</script>
+		      <script>TableColumn("Mon", "ColumnContent");</script>
 		    </tr>
 		    <tr>
 		      <th scope="row">Tuesday</th>
-		      <script>TableColumn("Tue");</script>
+		      <script>TableColumn("Tue", "ColumnContent");</script>
 		    </tr>
 		    <tr>
 		      <th scope="row">Wednesday</th>
-		      <script>TableColumn("Wed");</script>
+		      <script>TableColumn("Wed", "ColumnContent");</script>
 		    </tr>
 		    <tr>
 		      <th scope="row">Thursday</th>
-		      <script>TableColumn("Thu");</script>
+		      <script>TableColumn("Thu", "ColumnContent");</script>
 		    </tr>
 		  </tbody>
 		</table>
@@ -116,17 +117,60 @@
 
 	<hr>
 
-	<!-- The Canvas -->
-	<div id="view" class="raw">
+	<!-- Content of Preview-Table's Column -->
+	<div id="ColumnData" style="display: none;">
+		<article id="Subject"></article>
+		<article id="Period-Type"></article>
+		<article id="Place"></article>
+	</div>
+
+	<!-- Preview Time Table -->
+	<div id="preview" class="raw table-responsive">
 		<h3 class="title">The Time Table as an Image</h3>
-		<canvas id="canvas" class="well"></canvas>
-		<script>createTable();</script>
+		<table id="preview-table" class="table table-bordered">
+			<thead>
+				<tr>
+				    <th></th>
+				    <th>8:30 to 10:00</th>
+				    <th>10:10 to 11:40</th>
+				    <th>11:50 to 1:20</th>
+				    <th>1:40 to 3:10</th>
+				    <th>3:20 to 4:50</th>
+				    <th>5:00 to 6:30</th>
+				</tr>
+			</thead>
+			<tbody>
+		    <tr>
+		      <th scope="row">Saturday</th>
+		      <script>TableColumn("Sat", "ColumnData");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Sunday</th>
+		      <script>TableColumn("Sun", "ColumnData");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Monday</th>
+		      <script>TableColumn("Mon", "ColumnData");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Tuesday</th>
+		      <script>TableColumn("Tue", "ColumnData");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Wednesday</th>
+		      <script>TableColumn("Wed", "ColumnData");</script>
+		    </tr>
+		    <tr>
+		      <th scope="row">Thursday</th>
+		      <script>TableColumn("Thu", "ColumnData");</script>
+		    </tr>
+		  </tbody>
+		</table>
 	</div>
 
 	<!-- Downloads -->
-	<div id="download" class="raw form-group">
-		<a id="download" class="btn btn-primary" onclick="downloadPNG()" download="timetable.png">
-		Download PNG</a>
+	<div id="download" class="raw form-group" >
+		<a id="download" class="btn btn-primary" onclick="downloadPNG()" download="timetable.png">Download PNG</a>
 	</div>
 
 	<br/>
