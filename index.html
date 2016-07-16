@@ -4,6 +4,7 @@
 
 	<meta charset="utf-8">
 	<title>Engineering Time Table</title>
+	<link rel="icon" href="favicon.ico">
 
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -19,15 +20,25 @@
 	<!-- Social Buttons -->
 	<link rel="stylesheet" href="https://cdn.rawgit.com/lipis/bootstrap-social/gh-pages/bootstrap-social.css">
 
-
 	<!-- Style Sheet -->
 	<link rel="stylesheet" type="text/css" href="style sheet.css">
 
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/tableExport.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jquery.base64.js"></script>
+	<!-- Export PNG -->
+	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/html2canvas.js"></script>
+	<!-- Export PDF -->
+	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jspdf/libs/sprintf.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jspdf/jspdf.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jspdf/libs/base64.js"></script>
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="table script.js"></script>
+	<script type="text/javascript" src="canvas script.js"></script>
+	<script type="text/javascript" src="download script.js"></script>
 
 </head>
 
@@ -41,6 +52,7 @@
 		    </div>
 		    <ul class="nav navbar-nav navbar-right">
 		    	<li><a class="page-scroll" href="#view">View Table</a></li>
+		    	<li><a class="page-scroll" href="#download">Download Table</a></li>
 		    	<li>
 		    		<a href="https://github.com/Magdz/Eng.TimeTable" target="_blank" class="btn btn-block btn-social btn-lg"><span class="fa fa-github"></span>View on Github</a>
 		    	</li>
@@ -51,17 +63,17 @@
 	<!-- Content of Table's Column -->
 	<div id="ColumnContent" style="display: none;">
 		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject()">
-		<select id="Period-Type" class="form-control">
-			<option value="Lecture">Lecture</option>
-			<option value="Tutorial">Tutorial</option>
-			<option value="Lab">Lab</option>
-		</select>
+			<select id="Period-Type" class="form-control">
+				<option value="Lecture">Lecture</option>
+				<option value="Tutorial">Tutorial</option>
+				<option value="Lab">Lab</option>
+			</select>	
 		<input id="Place" type="text" placeholder="Place" class="form-control">
 	</div>
 
 	<!-- The Time Table -->
 	<div class="table-responsive">
-		<table class="table table-bordered">
+		<table id="table" class="table table-bordered">
 		  <thead>
 		    <tr>
 		      <th></th>
@@ -108,6 +120,17 @@
 	<div id="view" class="raw">
 		<h3 class="title">The Time Table as an Image</h3>
 		<canvas id="canvas" class="well"></canvas>
+		<script>createTable();</script>
 	</div>
+
+	<!-- Downloads -->
+	<div id="download" class="raw form-group">
+		<a id="download" class="btn btn-primary" onclick="downloadPNG()" download="timetable.png">
+		Download PNG</a>
+	</div>
+
+	<br/>
+	<br/>
+
 </body>
 </html>
