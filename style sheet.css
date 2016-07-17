@@ -21,13 +21,21 @@ h3.title{
 	text-decoration: underline;
 }
 
-a#download, div#color-picker{
+a#download, div#color-picker, button#color-apply{
     width: 150px; 
     margin: -20px -50px; 
     position: relative;
     top:50%; 
     left:50%;
 }
+
+ button#color-apply{
+ 	margin: 0px -75px !important;
+ }
+
+ select#color-target{
+ 	margin: 20px 0px !important;
+ }
 
 div#design{
 	padding-left: 0;
