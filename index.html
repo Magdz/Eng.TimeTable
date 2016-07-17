@@ -97,27 +97,27 @@
 		  </thead>
 		  <tbody>
 		    <tr>
-		      <th scope="raw">Saturday</th>
+		      <th scope="row">Saturday</th>
 		      <script>TableColumn("Sat", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Sunday</th>
+		      <th scope="row">Sunday</th>
 		      <script>TableColumn("Sun", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Monday</th>
+		      <th scope="row">Monday</th>
 		      <script>TableColumn("Mon", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Tuesday</th>
+		      <th scope="row">Tuesday</th>
 		      <script>TableColumn("Tue", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Wednesday</th>
+		      <th scope="row">Wednesday</th>
 		      <script>TableColumn("Wed", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Thursday</th>
+		      <th scope="row">Thursday</th>
 		      <script>TableColumn("Thu", "ColumnContent");</script>
 		    </tr>
 		  </tbody>
@@ -134,7 +134,7 @@
 	</div>
 
 	<!-- Preview Time Table -->
-	<div id="preview" class="raw table-responsive">
+	<div id="preview" class="row table-responsive">
 		<h3 class="title">The Time Table as an Image</h3>
 		<table id="preview-table" class="table table-bordered">
 			<thead>
@@ -150,27 +150,27 @@
 			</thead>
 			<tbody>
 		    <tr>
-		      <th scope="raw">Saturday</th>
+		      <th scope="row">Saturday</th>
 		      <script>TableColumn("Sat", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Sunday</th>
+		      <th scope="row">Sunday</th>
 		      <script>TableColumn("Sun", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Monday</th>
+		      <th scope="row">Monday</th>
 		      <script>TableColumn("Mon", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Tuesday</th>
+		      <th scope="row">Tuesday</th>
 		      <script>TableColumn("Tue", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Wednesday</th>
+		      <th scope="row">Wednesday</th>
 		      <script>TableColumn("Wed", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="raw">Thursday</th>
+		      <th scope="row">Thursday</th>
 		      <script>TableColumn("Thu", "ColumnData");</script>
 		    </tr>
 		  </tbody>
@@ -180,24 +180,31 @@
 	<br/>
 
 	<!-- Custom Table Designer -->
-	<div id="design" class="raw form-group">
+	<div id="design" class="row form-group">
 		<h3 class="title">Design The Time Table</h3>
-		<div id="color-picker" class="raw">
-			<input id="color-input" type="text" value="000" name="border-color" class="pick-a-color form-control">
-			<script type="text/javascript">ColorPicker();</script>
-			<select id="color-target" class="form-control">
-				<option value="" selected="selected">What to color ?..</option>
-				<option value="Background">Background</option>
-				<option value="Corner">Corner</option>
-				<option value="Days">Days</option>
-				<option value="Time">Time</option>
-				<option value="Lectures">Lectures</option>
-				<option value="Tutorials">Tutorials</option>
-				<option value="Labs">Labs</option>
-				<option value="Border Font">Border Font</option>
-				<option value="Content Font">Content Font</option>
-			</select>
-			<button id="color-apply" class="btn btn-success" onclick="Coloring()">Apply</button>
+		<div id="table-color">
+			<h4 class="subtitle">Table Colors</h4>
+			<div id="color-picker">
+				<input id="color-input" type="text" value="000" name="border-color" class="pick-a-color form-control">
+				<script type="text/javascript">ColorPicker();</script>
+				<select id="color-target" class="form-control">
+					<option value="" selected="selected">What to color ?..</option>
+					<option value="Background">Background</option>
+					<option value="Corner">Corner</option>
+					<option value="Days">Days</option>
+					<option value="Time">Time</option>
+					<option value="Lectures">Lectures</option>
+					<option value="Tutorials">Tutorials</option>
+					<option value="Labs">Labs</option>
+					<option value="Border Font">Border Font</option>
+					<option value="Content Font">Content Font</option>
+				</select>
+				<button id="color-apply" class="btn btn-success" onclick="Coloring()">Apply</button>
+			</div>
+		</div>
+		<div id="font-size">
+			<h4 class="subtitle">Font Size</h4>
+			<input id="font-input" type="number" value="14" name="font-size" class="form-control" onkeyup="FontSize()">
 		</div>
 	</div>
 
@@ -206,7 +213,7 @@
 	<br/>
 
 	<!-- Downloads -->
-	<div id="download" class="raw form-group" >
+	<div id="download" class="row form-group" >
 		<a id="download" class="btn btn-primary" onclick="downloadPNG()" download="timetable.png">Download</a>
 	</div>
 

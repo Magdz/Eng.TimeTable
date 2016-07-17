@@ -43,3 +43,8 @@ function Coloring() {
     	$("#preview-table").find("td").css('color', getHexColor());
     }
 }
+
+function FontSize(){
+	var size = $('#font-input').val();
+	$('#preview-table').css('font-size', size + "px");
+}

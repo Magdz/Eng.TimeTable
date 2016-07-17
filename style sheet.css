@@ -14,14 +14,19 @@ canvas{
     height: 566px;
 }
 
-h3.title{
+h3.title, h4.subtitle{
 	margin-left: 20px;
 	font-family: 'Droid Serif', serif;
 	font-weight: 700;
 	text-decoration: underline;
 }
 
-a#download, div#color-picker, button#color-apply{
+h4.subtitle{
+	color: black;
+	margin-left: 30%;
+}
+
+a#download, div#color-picker, button#color-apply, input#font-input{
     width: 150px; 
     margin: -20px -50px; 
     position: relative;
@@ -29,19 +34,20 @@ a#download, div#color-picker, button#color-apply{
     left:50%;
 }
 
- button#color-apply{
- 	margin: 0px -75px !important;
- }
+button#color-apply{
+	margin: 0px -75px !important;
+}
 
- select#color-target{
- 	margin: 20px 0px !important;
- }
+select#color-target{
+	margin: 20px 0px !important;
+}
 
 div#design{
 	padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
+    height: 230px;
 }
 
 table#edit-table{
@@ -67,4 +73,12 @@ table#preview-table{
 table#preview-table td, table#preview-table th{
 	text-align: center;
 	vertical-align: middle;
+}
+
+div#table-color, div#font-size {
+    border: 1px solid white;
+    float: left;
+    color: white;
+    width: 50%;
+    height: 80px;
 }
