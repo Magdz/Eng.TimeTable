@@ -3,6 +3,9 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=10">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Engineering Time Table</title>
 	<link rel="icon" href="favicon.ico">
 
@@ -19,12 +22,15 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Slabo+27px|Oswald|Ubuntu:400,500,700|Droid+Serif:400,700|Merriweather:400,700,900' rel='stylesheet' type='text/css'>
 	<!-- Social Buttons -->
 	<link rel="stylesheet" href="https://cdn.rawgit.com/lipis/bootstrap-social/gh-pages/bootstrap-social.css">
+	<!-- Color Picker -->
+	<link rel="stylesheet" href="https://cdn.rawgit.com/lauren/pick-a-color/master/build/dependencies/bootstrap-3.0.0.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/lauren/pick-a-color/master/build/1.2.3/css/pick-a-color-1.2.3.min.css">
 
 	<!-- Style Sheet -->
 	<link rel="stylesheet" type="text/css" href="style sheet.css">
 
 	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/tableExport.js"></script>
 	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jquery.base64.js"></script>
@@ -34,10 +40,13 @@
 	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jspdf/libs/sprintf.js"></script>
 	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jspdf/jspdf.js"></script>
 	<script type="text/javascript" src="https://cdn.rawgit.com/kayalshri/tableExport.jquery.plugin/master/jspdf/libs/base64.js"></script>
+	<!-- Color Picker -->
+	<script src="https://cdn.rawgit.com/lauren/pick-a-color/master/build/dependencies/tinycolor-0.9.15.min.js"></script>
+	<script src="https://cdn.rawgit.com/lauren/pick-a-color/master/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="table script.js"></script>
-	<script type="text/javascript" src="canvas script.js"></script>
+	<script type="text/javascript" src="design script.js"></script>
 	<script type="text/javascript" src="download script.js"></script>
 
 </head>
@@ -48,7 +57,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="btn navbar-brand" href="/eng.timetable">Welcome to the Engineering Time Table</a>
+		      <a class="btn navbar-brand" href="/Eng.TimeTable">Welcome to the Engineering Time Table</a>
 		    </div>
 		    <ul class="nav navbar-nav navbar-right">
 		    	<li><a class="page-scroll" href="#preview">Preview</a></li>
@@ -63,13 +72,13 @@
 	<!-- Content of Edit-Table's Column -->
 	<div id="ColumnContent" style="display: none;">
 		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject(this)">
-			<select id="Period-Type" class="form-control" onchange="getType(this)">
+			<select id="Period-Type" class="form-control" onmouseup="getType(this)">
 				<option value="" selected="selected">Select Period Type</option>
 				<option value="Lecture">Lecture</option>
 				<option value="Tutorial">Tutorial</option>
 				<option value="Lab">Lab</option>
 			</select>	
-		<input id="Place" type="text" placeholder="Place" class="form-control" onkeypress="getPlace(this)">
+		<input id="Place" type="text" placeholder="Place" class="form-control" onkeyup="getPlace(this)">
 	</div>
 
 	<!-- Edit Time Table -->
@@ -88,27 +97,27 @@
 		  </thead>
 		  <tbody>
 		    <tr>
-		      <th scope="row">Saturday</th>
+		      <th scope="raw">Saturday</th>
 		      <script>TableColumn("Sat", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Sunday</th>
+		      <th scope="raw">Sunday</th>
 		      <script>TableColumn("Sun", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Monday</th>
+		      <th scope="raw">Monday</th>
 		      <script>TableColumn("Mon", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Tuesday</th>
+		      <th scope="raw">Tuesday</th>
 		      <script>TableColumn("Tue", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Wednesday</th>
+		      <th scope="raw">Wednesday</th>
 		      <script>TableColumn("Wed", "ColumnContent");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Thursday</th>
+		      <th scope="raw">Thursday</th>
 		      <script>TableColumn("Thu", "ColumnContent");</script>
 		    </tr>
 		  </tbody>
@@ -141,36 +150,49 @@
 			</thead>
 			<tbody>
 		    <tr>
-		      <th scope="row">Saturday</th>
+		      <th scope="raw">Saturday</th>
 		      <script>TableColumn("Sat", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Sunday</th>
+		      <th scope="raw">Sunday</th>
 		      <script>TableColumn("Sun", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Monday</th>
+		      <th scope="raw">Monday</th>
 		      <script>TableColumn("Mon", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Tuesday</th>
+		      <th scope="raw">Tuesday</th>
 		      <script>TableColumn("Tue", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Wednesday</th>
+		      <th scope="raw">Wednesday</th>
 		      <script>TableColumn("Wed", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Thursday</th>
+		      <th scope="raw">Thursday</th>
 		      <script>TableColumn("Thu", "ColumnData");</script>
 		    </tr>
 		  </tbody>
 		</table>
 	</div>
 
+	<hr>
+
+	<!-- Custom Table Designer -->
+	<div id="design" class="raw form-group">
+		<div id="color-picker" class="raw">
+			<input type="text" value="000" name="border-color" class="pick-a-color form-control">
+			<script type="text/javascript">ColorPicker();</script>
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+
 	<!-- Downloads -->
 	<div id="download" class="raw form-group" >
-		<a id="download" class="btn btn-primary" onclick="downloadPNG()" download="timetable.png">Download PNG</a>
+		<a id="download" class="btn btn-primary" onclick="downloadPNG()" download="timetable.png">Download</a>
 	</div>
 
 	<br/>

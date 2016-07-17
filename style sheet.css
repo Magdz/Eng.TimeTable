@@ -21,12 +21,19 @@ h3.title{
 	text-decoration: underline;
 }
 
-a#download{
+a#download, div#color-picker{
     width: 150px; 
     margin: -20px -50px; 
     position: relative;
     top:50%; 
     left:50%;
+}
+
+div#design{
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table#edit-table{
@@ -47,4 +54,9 @@ table#preview-table{
     margin-left: auto;
     margin-right: auto;
 	width: 1080px;
+}
+
+table#preview-table td, table#preview-table th{
+	text-align: center;
+	vertical-align: middle;
 }
