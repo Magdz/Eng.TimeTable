@@ -203,8 +203,23 @@
 			</div>
 		</div>
 		<div id="font-size">
-			<h4 class="subtitle">Font Size</h4>
-			<input id="font-input" type="number" value="14" name="font-size" class="form-control" onkeyup="FontSize()">
+			<h4 class="subtitle">Font Style</h4>
+			<div id="font-style">
+				<input id="font-input" type="number" value="14" name="font-size" class="form-control" onkeyup="FontSize()">
+				<select id="font-family" class="form-control" onmouseup="FontFamily()">
+					<option value="Arial, sans-serif" selected="selected">Arial</option>
+					<option value="Times New Roman, serif">Times New Roman</option>
+					<option value="Courier New, monospace">Courier New</option>
+					<option value="Comic Sans, Comic Sans MS, cursive">Comic Sans MS</option>
+					<option value="Droid Serif, serif">Droid Serif</option>
+					<option value="Impact, fantasy">Impact</option>
+				</select>
+				<div>
+					<button id="bold" class="btn btn-default" style="font-weight: bold" onclick="BoldText()">B</button>
+					<button id="italic" class="btn btn-default" onclick="ItalicText()">I</button>
+					<button id="underline" class="btn btn-default" style="text-decoration: underline" onclick="UnderlineText()">U</button>
+				</div>
+			</div>
 		</div>
 	</div>
 

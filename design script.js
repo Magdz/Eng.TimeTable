@@ -48,3 +48,39 @@ function FontSize(){
 	var size = $('#font-input').val();
 	$('#preview-table').css('font-size', size + "px");
 }
+
+function getFontFamily(){
+	return $("#font-family").val();
+}
+
+function FontFamily(){
+	$("#preview-table").find("th").css('font-family', getFontFamily());
+	$("#preview-table").find("td").css('font-family', getFontFamily());
+}
+
+function BoldText(){
+	var weight = $("#preview-table").find("td").css('font-weight');
+	if(weight == '400'){
+		$("#preview-table").find("td").css('font-weight', '700');
+	}else{
+		$("#preview-table").find("td").css('font-weight', '400');
+	}
+}
+
+function ItalicText(){
+	var style = $("#preview-table").find("td").css('font-style');
+	if(style == 'normal'){
+		$("#preview-table").find("td").css('font-style', 'italic');
+	}else{
+		$("#preview-table").find("td").css('font-style', 'normal');
+	}
+}
+
+function UnderlineText(){
+	var decoration = $("#preview-table").find("td").css('text-decoration');
+	if(decoration == 'none'){
+		$("#preview-table").find("td").css('text-decoration', 'underline');
+	}else{
+		$("#preview-table").find("td").css('text-decoration', 'none');
+	}
+}

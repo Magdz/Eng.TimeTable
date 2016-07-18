@@ -26,7 +26,7 @@ h4.subtitle{
 	margin-left: 30%;
 }
 
-a#download, div#color-picker, button#color-apply, input#font-input{
+a#download, div#color-picker, button#color-apply, div#font-style{
     width: 150px; 
     margin: -20px -50px; 
     position: relative;
@@ -38,7 +38,7 @@ button#color-apply{
 	margin: 0px -75px !important;
 }
 
-select#color-target{
+select#color-target, select#font-family{
 	margin: 20px 0px !important;
 }
 
@@ -81,4 +81,10 @@ div#table-color, div#font-size {
     color: white;
     width: 50%;
     height: 80px;
+}
+
+button#italic{
+	font-style: italic !important;
+	margin-left: 20px;
+	margin-right: 20px;
 }
