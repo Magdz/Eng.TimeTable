@@ -16,6 +16,7 @@ function getType(sender){
 	var dayID = sender.parentNode.getAttribute('id');
 	var data = $('#edit-table').find("#"+dayID).find('#Period-Type').val();
 	$('#preview-table').find("#"+dayID).find('#Period-Type').text(data);
+	Recolor();
 }
 
 function getPlace(sender){
