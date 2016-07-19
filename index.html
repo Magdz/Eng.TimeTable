@@ -72,7 +72,7 @@
 	<!-- Content of Edit-Table's Column -->
 	<div id="ColumnContent" style="display: none;">
 		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject(this)">
-			<select id="Period-Type" class="form-control" onmouseup="getType(this)">
+			<select id="Period-Type" class="form-control" onmouseup="getType(this)" onchange="Recolor()">
 				<option value="" selected="selected">Select Period Type</option>
 				<option value="Lecture">Lecture</option>
 				<option value="Tutorial">Tutorial</option>

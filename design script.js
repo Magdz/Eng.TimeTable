@@ -13,9 +13,15 @@ function getTarget(){
 	return $('#color-target').val();
 }
 
+var Background_Color = '#fff';
+var Lectures_Color = Background_Color;
+var Tutorials_Color = Background_Color;
+var Labs_Color = Background_Color;
+
 function Coloring() {
 	if(getTarget() == "Background"){
-		$("#preview-table").css('background-color', getHexColor());
+		Background_Color = getHexColor();
+		$("#preview-table").css('background-color', Background_Color);
 	}
     else if(getTarget() == "Corner"){
     	var cells = document.getElementById("preview-table").getElementsByTagName("th");
@@ -28,13 +34,16 @@ function Coloring() {
     	$("#preview-table").find("thead").find("th").css('background-color', getHexColor());
     }
     else if(getTarget() == "Lectures"){
-    	$("#preview-table").find("td").find('#Period-Type:contains("Lecture")').parent().css('background-color', getHexColor());
+    	Lectures_Color = getHexColor();
+    	$("#preview-table").find("td").find('#Period-Type:contains("Lecture")').parent().css('background-color', Lectures_Color);
     }
     else if(getTarget() == "Tutorials"){
-    	$("#preview-table").find("td").find('#Period-Type:contains("Tutorial")').parent().css('background-color', getHexColor());
+    	Tutorials_Color = getHexColor();
+    	$("#preview-table").find("td").find('#Period-Type:contains("Tutorial")').parent().css('background-color', Tutorials_Color);
     }
     else if(getTarget() == "Labs"){
-    	$("#preview-table").find("td").find('#Period-Type:contains("Lab")').parent().css('background-color', getHexColor());
+    	Labs_Color = getHexColor();
+    	$("#preview-table").find("td").find('#Period-Type:contains("Lab")').parent().css('background-color', Labs_Color);
     }
     else if(getTarget() == "Border Font"){
     	$("#preview-table").find("th").css('color', getHexColor());
@@ -42,6 +51,14 @@ function Coloring() {
     else if(getTarget() == "Content Font"){
     	$("#preview-table").find("td").css('color', getHexColor());
     }
+    Recolor();
+}
+
+function Recolor(){
+    	$("#preview-table").find("td").find('#Period-Type:contains("")').parent().css('background-color', Background_Color);
+    	$("#preview-table").find("td").find('#Period-Type:contains("Lecture")').parent().css('background-color', Lectures_Color);
+    	$("#preview-table").find("td").find('#Period-Type:contains("Tutorial")').parent().css('background-color', Tutorials_Color);
+    	$("#preview-table").find("td").find('#Period-Type:contains("Lab")').parent().css('background-color', Labs_Color);
 }
 
 function FontSize(){
