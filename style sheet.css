@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+*{
+font-family: 'Oswald', sans-serif;
+}
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -20,15 +26,15 @@ canvas{
 }
 
 h3.title, h4.subtitle{
-	margin-left: 20px;
-	font-family: 'Droid Serif', serif;
+	margin-left: 30px;
+	font-family: 'Oswald', sans-serif;
 	font-weight: 700;
 	text-decoration: underline;
 }
 
 h4.subtitle{
 	color: black;
-	margin-left: 30%;
+	margin-left: 42%;
 }
 
 a#download, div#color-picker, button#color-apply, div#font-style{
@@ -92,4 +98,19 @@ button#italic{
 	font-style: italic !important;
 	margin-left: 20px;
 	margin-right: 20px;
+}
+
+/*Append to master bootstrap*/
+.navbar-inverse{
+	background:none;
+	border:none;
+	border-radius:0px;
+	border-bottom: 1px solid #ddd;
+	background-color:#4b5f83;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+	text-decoration: underline;
 }
