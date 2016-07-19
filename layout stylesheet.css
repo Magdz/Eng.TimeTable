@@ -1,0 +1,18 @@
+.footer-text{
+	text-align: left;
+	font-size: 18px;
+	padding-top: 40px;
+	color:white;
+}
+
+a.footer-social:link, a.footer-social{
+	color: white;
+}
+
+a.footer-social:hover{
+	color: #ddd;
+}
+
+div.footer-social{
+	margin:10px;
+}
