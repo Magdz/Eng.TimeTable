@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* Make input tag border transparent */
 input.transparent-input{
        background-color:rgba(0,0,0,0) !important;
