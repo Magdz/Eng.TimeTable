@@ -1,0 +1,13 @@
+.navbar-inverse{
+	background:none;
+	border:none;
+	border-radius:0px;
+	border-bottom: 1px solid #ddd;
+	background-color:#4b5f83;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+	text-decoration: underline;
+}

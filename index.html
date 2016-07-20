@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=10">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="application-name" content="Engineering Time Table - Alexandria University">
 	<meta name="description" content="The place where you can easily create and design your own Time Table">
-	<meta name="keywords" content="Time, Table, Faculty, Engineering, Alexandria, University, TimeTable, Magdz, Design, Dynamic, Easy, Create, Schedule">
+	<meta name="keywords" content="Time, Table, Faculty, Engineering, Alexandria, University, TimeTable, Generator, Magdz, Design, Dynamic, Easy, Create, Schedule">
 	<meta name="author" content="Ahmed Magdy Ibrahim">
 	<meta name="robots" content="index, follow">
 	<meta name="revisit-after" content="3 month">
@@ -34,8 +35,9 @@
 	<link rel="stylesheet" href="https://cdn.rawgit.com/lauren/pick-a-color/master/build/1.2.3/css/pick-a-color-1.2.3.min.css">
 
 	<!-- Style Sheet -->
-	<link rel="stylesheet" type="text/css" href="style sheet.css">
-	<link rel="stylesheet" type="text/css" href="layout stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/layout-stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-append.css">
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
@@ -53,9 +55,9 @@
 	<script src="https://cdn.rawgit.com/lauren/pick-a-color/master/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="table script.js"></script>
-	<script type="text/javascript" src="design script.js"></script>
-	<script type="text/javascript" src="download script.js"></script>
+	<script type="text/javascript" src="js/table-script.js"></script>
+	<script type="text/javascript" src="js/design-script.js"></script>
+	<script type="text/javascript" src="js/download-script.js"></script>
 
 </head>
 
@@ -65,9 +67,11 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
-			<img src="images/logo.png" alt="Engineering Table Generator"/>
-		   </div>
+				<img src="images/logo.png" alt="Engineering Table Generator"/>
+		   	</div>
 		    <ul class="nav navbar-nav navbar-right">
+		    	<li><a class="page-scroll" href="#edit">Edit</a></li>
+		    	<li><a class="page-scroll" href="#design">Design</a></li>
 		    	<li><a class="page-scroll" href="#preview">Preview</a></li>
 		    	<li><a class="page-scroll" href="#download">Download</a></li>
 		    	<li>
@@ -76,9 +80,7 @@
 		    </ul>
 		</div>
 	</nav>
-	<br/>
-	<h3 class="title"><img src="images/timings.png"/>Enter your timings</h3>
-	<br/>
+
 	<!-- Content of Edit-Table's Column -->
 	<div id="ColumnContent" style="display: none;">
 		<input id="Subject" type='text' placeholder='Subject' class="form-control" onkeyup="getSubject(this)">
@@ -92,45 +94,48 @@
 	</div>
 
 	<!-- Edit Time Table -->
-	<div class="table-responsive">
+	<div id="edit" class="table-responsive">
+		<br/>
+		<h3 class="title"><img src="images/timings.png"/>Enter your timings</h3>
+		<br/>
 		<table id="edit-table" class="table table-bordered">
-		  <thead>
-		    <tr>
-		      <th></th>
-		      <th>8:30 to 10:00</th>
-		      <th>10:10 to 11:40</th>
-		      <th>11:50 to 1:20</th>
-		      <th>1:40 to 3:10</th>
-		      <th>3:20 to 4:50</th>
-		      <th>5:00 to 6:30</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">Saturday</th>
-		      <script>TableColumn("Sat", "ColumnContent");</script>
-		    </tr>
-		    <tr>
-		      <th scope="row">Sunday</th>
-		      <script>TableColumn("Sun", "ColumnContent");</script>
-		    </tr>
-		    <tr>
-		      <th scope="row">Monday</th>
-		      <script>TableColumn("Mon", "ColumnContent");</script>
-		    </tr>
-		    <tr>
-		      <th scope="row">Tuesday</th>
-		      <script>TableColumn("Tue", "ColumnContent");</script>
-		    </tr>
-		    <tr>
-		      <th scope="row">Wednesday</th>
-		      <script>TableColumn("Wed", "ColumnContent");</script>
-		    </tr>
-		    <tr>
-		      <th scope="row">Thursday</th>
-		      <script>TableColumn("Thu", "ColumnContent");</script>
-		    </tr>
-		  </tbody>
+		  	<thead>
+			    <tr>
+			      <th></th>
+			      <th>8:30 to 10:00</th>
+			      <th>10:10 to 11:40</th>
+			      <th>11:50 to 1:20</th>
+			      <th>1:40 to 3:10</th>
+			      <th>3:20 to 4:50</th>
+			      <th>5:00 to 6:30</th>
+			    </tr>
+		 	</thead>
+		  	<tbody>
+			    <tr>
+			    	<th scope="row">Saturday</th>
+			      	<script>TableColumn("Sat", "ColumnContent");</script>
+			    </tr>
+			    <tr>
+			      	<th scope="row">Sunday</th>
+			      	<script>TableColumn("Sun", "ColumnContent");</script>
+			    </tr>
+			    <tr>
+			      	<th scope="row">Monday</th>
+			      	<script>TableColumn("Mon", "ColumnContent");</script>
+			    </tr>
+			    <tr>
+				    <th scope="row">Tuesday</th>
+				    <script>TableColumn("Tue", "ColumnContent");</script>
+			    </tr>
+			    <tr>
+				    <th scope="row">Wednesday</th>
+				    <script>TableColumn("Wed", "ColumnContent");</script>
+			    </tr>
+			    <tr>
+				    <th scope="row">Thursday</th>
+				    <script>TableColumn("Thu", "ColumnContent");</script>
+			    </tr>
+		  	</tbody>
 		</table>
 	</div>
 
@@ -138,7 +143,6 @@
 
 	<!-- Custom Table Designer -->
 	<div id="design" class="row form-group">
-		
 		<h3 class="title"><img src="images/modify.png"/>Style your timetable</h3>
 		<div id="table-color">
 			<h4 class="subtitle">Table Colors</h4>
@@ -196,11 +200,11 @@
 
 	<!-- Preview Time Table -->
 	<div id="preview" class="row table-responsive">
-		<h3 class="title"><img src="images/download.png"/>Preview and download your timetable</h3>
+		<h3 class="title"><img src="images/download.png"/>Preview and Download your timetable</h3>
 		<table id="preview-table" class="table table-bordered">
 			<thead>
 				<tr>
-				    <th></th>
+					<th></th>
 				    <th>8:30 to 10:00</th>
 				    <th>10:10 to 11:40</th>
 				    <th>11:50 to 1:20</th>
@@ -211,36 +215,34 @@
 			</thead>
 			<tbody>
 		    <tr>
-		      <th scope="row">Saturday</th>
-		      <script>TableColumn("Sat", "ColumnData");</script>
+		      	<th scope="row">Saturday</th>
+		      	<script>TableColumn("Sat", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Sunday</th>
-		      <script>TableColumn("Sun", "ColumnData");</script>
+		      	<th scope="row">Sunday</th>
+		      	<script>TableColumn("Sun", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Monday</th>
-		      <script>TableColumn("Mon", "ColumnData");</script>
+		      	<th scope="row">Monday</th>
+		      	<script>TableColumn("Mon", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Tuesday</th>
-		      <script>TableColumn("Tue", "ColumnData");</script>
+		      	<th scope="row">Tuesday</th>
+		      	<script>TableColumn("Tue", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Wednesday</th>
-		      <script>TableColumn("Wed", "ColumnData");</script>
+		      	<th scope="row">Wednesday</th>
+		      	<script>TableColumn("Wed", "ColumnData");</script>
 		    </tr>
 		    <tr>
-		      <th scope="row">Thursday</th>
-		      <script>TableColumn("Thu", "ColumnData");</script>
+		      	<th scope="row">Thursday</th>
+		      	<script>TableColumn("Thu", "ColumnData");</script>
 		    </tr>
 		  </tbody>
 		</table>
 	</div>
 
 	<br/>
-
-	
 
 	<!-- Downloads -->
 	<div id="download" class="row form-group" >
@@ -271,7 +273,10 @@
 		                        Made by: 
 		                        <a href="https://github.com/Magdz">Ahmed Magdy Ibrahim</a>
 		                        <br>
-		                        Please contact me for any bugs or ideas!
+		                        Design by:
+		                        <a href="https://github.com/SubNader">Nader Alsharkawy</a>
+		                        <br>
+		                        Please contact us for any bugs or ideas!
 		                    </p>
 		                </div>
 		            </div>
