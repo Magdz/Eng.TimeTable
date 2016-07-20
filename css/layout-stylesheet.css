@@ -5,7 +5,7 @@
 	color:white;
 }
 
-a.footer-social:link, a.footer-social{
+a.footer-social{
 	color: white;
 }
 
@@ -15,4 +15,12 @@ a.footer-social:hover{
 
 div.footer-social{
 	margin:10px;
+}
+
+.header-text{
+	text-align: center;
+	font-size: 22px;
+	color:#4b5f83;
+	font-family: Impact, fantasy;
+	background-color: lightyellow;
 }

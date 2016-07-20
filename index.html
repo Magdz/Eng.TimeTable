@@ -67,7 +67,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
-				<img src="images/logo.png" alt="Engineering Table Generator"/>
+				<a href="/Eng.TimeTable"><img src="images/logo.png" alt="Engineering Table Generator"/></a>
 		   	</div>
 		    <ul class="nav navbar-nav navbar-right">
 		    	<li><a class="page-scroll" href="#edit">Edit</a></li>
@@ -80,6 +80,24 @@
 		    </ul>
 		</div>
 	</nav>
+
+	<!-- Header -->
+	<header>
+		<!-- Summary -->
+		<div class="row header-text">
+			<h1 style="font-family: Impact, fantasy">Welcome!</h1>
+			<article style="font-weight: bold;">
+				to the place where you can easily create and design your own Timetable.
+			</article>
+			<p style="padding-top: 10px">
+				Designed specifically for the students of the Faculty of Engineering at Alexandria University. 
+				<br>
+				Start by entering your timings, customize the way your timetable looks and download it right away! 
+			</p>
+		</div>
+	</header>
+
+	<hr>
 
 	<!-- Content of Edit-Table's Column -->
 	<div id="ColumnContent" style="display: none;">
@@ -169,7 +187,8 @@
 			<div id="font-style">
 				<input id="font-input" type="number" value="14" name="font-size" class="form-control" onkeyup="FontSize()">
 				<select id="font-family" class="form-control" onmouseup="FontFamily()">
-					<option value="Arial, sans-serif" selected="selected">Arial</option>
+					<option value="Arial, sans-serif">Arial</option>
+					<option value="Oswald, sans-serif" selected="selected">Oswald</option>
 					<option value="Times New Roman, serif">Times New Roman</option>
 					<option value="Courier New, monospace">Courier New</option>
 					<option value="Comic Sans, Comic Sans MS, cursive">Comic Sans MS</option>
