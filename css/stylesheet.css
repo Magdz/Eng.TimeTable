@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 *{
     font-family: 'Oswald', sans-serif;
@@ -11,8 +10,8 @@ html, body {
 
 /* Make input tag border transparent */
 input.transparent-input{
-       background-color:rgba(0,0,0,0) !important;
-       border:none !important;
+    background-color:rgba(0,0,0,0) !important;
+    border:none !important;
 }
 
 canvas{
@@ -79,11 +78,13 @@ table#preview-table{
     margin-left: auto;
     margin-right: auto;
 	width: 1080px;
+	background: #fff;
 }
 
 table#preview-table td, table#preview-table th{
 	text-align: center;
 	vertical-align: middle;
+	border: 2px solid #dddddd;
 }
 
 div#table-color, div#font-size {

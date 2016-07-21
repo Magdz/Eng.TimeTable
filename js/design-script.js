@@ -72,7 +72,8 @@ function getFontFamily(){
 
 function FontFamily(){
 	$("#preview-table").find("th").css('font-family', getFontFamily());
-	$("#preview-table").find("td").css('font-family', getFontFamily());
+    $("#preview-table").find("td").css('font-family', getFontFamily());
+	$("#preview-table").find("td").find('article').css('font-family', getFontFamily());
 }
 
 function BoldText(){
