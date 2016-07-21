@@ -79,11 +79,13 @@ table#preview-table{
     margin-left: auto;
     margin-right: auto;
 	width: 1080px;
+	background: #fff;
 }
 
 table#preview-table td, table#preview-table th{
 	text-align: center;
 	vertical-align: middle;
+	border: 2px solid #dddddd;
 }
 
 div#table-color, div#font-size {
