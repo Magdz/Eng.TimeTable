@@ -12,13 +12,13 @@ function DownloadPNG(){
 				window.navigator.msSaveBlob(blob,'timetable.png');
 			}
 			else{
-			var trigger = $("<a>")
-		      .attr("href", url)
-		      .attr("download", "timetable.png")
-		      .appendTo("body");
+				var trigger = $("<a>")
+			      .attr("href", url)
+			      .attr("download", "timetable.png")
+			      .appendTo("body");
 
-			trigger[0].click();
-			trigger.remove();
+				trigger[0].click();
+				trigger.remove();
 			}
 		}
 	});
