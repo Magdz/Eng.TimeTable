@@ -23,3 +23,26 @@ function DownloadPNG(){
 		}
 	});
 }
+
+function ExportExcel(){
+	$("#preview-table").table2excel({
+		// exclude CSS class
+	  	exclude: ".noExl",
+	  	name: "Eng.Timetable",
+	  	filename: "Eng.Timetable"
+	});
+}
+
+function ImportExcel(){
+	var fileInput = document.getElementById("xls"),
+	readFile = function () {
+	    var reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById('preview-table').innerHTML = reader.result;
+            onImport();
+	    };
+	    // start reading the file. When it is done, calls the onload event defined above.
+	  	reader.readAsBinaryString(fileInput.files[0]);
+	};
+	fileInput.addEventListener('change', readFile);
+}
