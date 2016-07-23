@@ -106,10 +106,19 @@
 
 	<hr>
 
+	<!-- Import Timetable -->
 	<div id="import" class="row">
 		<h3 class="title"><img src="images/import.png">Import a timetable</h3>
 		<div class="col-xs-0 col-md-1"></div>
 		<input id="xls" type="file" name="Upload" accept="application/vnd.ms-excel" onchange="ImportExcel();">
+		<br>
+		<!-- Use Timetable -->
+		<div class="col-xs-0 col-md-1"></div>
+		<div id="use" class="row">
+			<h4 class="subtitle" style="margin-left: 7.5%;">Use one of the timetables provided by us</h4>
+			<div class="col-xs-0 col-md-1"></div>
+			<a class="btn btn-social btn-dropbox footer-social" target="_blank" href="https://www.dropbox.com/sh/dc787ckd5jlu0g4/AADwHhq8cyqQqI8VtIgCAHXIa?dl=0"><span class="fa fa-dropbox"></span>Dropbox</a>
+		</div>
 	</div>
 
 	<hr>
@@ -126,7 +135,7 @@
 		<input id="Place" type="text" placeholder="Place" class="form-control" onkeyup="getPlace(this)">
 	</div>
 
-	<!-- Edit Time Table -->
+	<!-- Edit Timetable -->
 	<div id="edit" class="table-responsive">
 		<br/>
 		<h3 class="title"><img src="images/timings.png"/>Enter and Edit your timings</h3>
@@ -327,18 +336,18 @@
 		            <div class="row">
 		                <div class="col-xs-0 col-md-4"></div>
 		                <div class="col-xs-1 footer-social">
-		                    <a title="Facebook" href="https://web.facebook.com/ahmed.magdz" target="_blank" class="btn btn-block btn-social-icon btn-lg footer-social" style="background-color:#3B5998;"><span class="fa fa-facebook"></a>
+		                    <a title="Facebook" href="https://web.facebook.com/ahmed.magdz" target="_blank" class="btn btn-facebook btn-social-icon btn-lg footer-social""><span class="fa fa-facebook"></a>
 		                </div>
 		                <div class="col-xs-1 footer-social">
-		                    <a title="Github" href="https://github.com/Magdz" target="_blank" class="btn btn-block btn-social-icon btn-lg footer-social" style="background-color:#444;"><span class="fa fa-github">
+		                    <a title="Github" href="https://github.com/Magdz" target="_blank" class="btn btn-github btn-social-icon btn-lg footer-social""><span class="fa fa-github">
 		                    </a>
 		                </div>
 		                <div class="col-xs-1 footer-social">
-		                    <a title="Linkedin" href="https://eg.linkedin.com/in/ahmed-magdy-ibrahim-232970a9" target="_blank" class="btn btn-block btn-social-icon btn-lg footer-social" style="background-color:#007BB6;"><span class="fa fa-linkedin">
+		                    <a title="Linkedin" href="https://eg.linkedin.com/in/ahmed-magdy-ibrahim-232970a9" target="_blank" class="btn btn-linkedin btn-social-icon btn-lg footer-social""><span class="fa fa-linkedin">
 		                    </a>
 		                </div>
 		                <div class="col-xs-1 footer-social">
-		                    <a title="Twitter" href="https://twitter.com/Ahmed_Magdz" target="_blank" class="btn btn-block btn-social-icon btn-lg footer-social" style="background-color:#55ACEE;"><span class="fa fa-twitter">
+		                    <a title="Twitter" href="https://twitter.com/Ahmed_Magdz" target="_blank" class="btn btn-twitter btn-social-icon btn-lg footer-social"><span class="fa fa-twitter">
 		                    </a>
 		                </div>
 		            </div>
