@@ -34,15 +34,18 @@ function ExportExcel(){
 }
 
 function ImportExcel(){
-	var fileInput = document.getElementById("xls"),
-	readFile = function () {
-	    var reader = new FileReader();
-        reader.onload = function () {
-            document.getElementById('preview-table').innerHTML = reader.result;
-            onImport();
-	    };
-	    // start reading the file. When it is done, calls the onload event defined above.
-	  	reader.readAsBinaryString(fileInput.files[0]);
+	var fileInput = document.getElementById("xls");
+	var validExts = new Array(".xlsx", ".xls");
+    var fileExt = fileInput.value;
+    fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+    if (validExts.indexOf(fileExt) < 0) {
+      return false;
+    }
+	var reader = new FileReader();
+    reader.onload = function () {
+        document.getElementById('preview-table').innerHTML = reader.result;
+        onImport();
 	};
-	fileInput.addEventListener('change', readFile);
+	// start reading the file. When it is done, calls the onload event defined above.
+	reader.readAsBinaryString(fileInput.files[0]);
 }

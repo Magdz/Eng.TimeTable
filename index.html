@@ -41,7 +41,7 @@
 	<!-- Custom JavaScript -->
 	<script type="text/javascript" src="js/table-script.js"></script>
 	<script type="text/javascript" src="js/design-script.js"></script>
-	<script type="text/javascript" src="js/download-script.js"></script>
+	<script type="text/javascript" src="js/files-script.js"></script>
 	
 	<!-- Bootstrap -->
 	<!-- Latest compiled and minified CSS -->
@@ -109,8 +109,7 @@
 	<div id="import" class="row">
 		<h3 class="title"><img src="images/import.png">Import a timetable</h3>
 		<div class="col-xs-0 col-md-1"></div>
-		<input id="xls" type="file">
-		<script type="text/javascript">ImportExcel();</script>
+		<input id="xls" type="file" name="Upload" accept="application/vnd.ms-excel" onchange="ImportExcel();">
 	</div>
 
 	<hr>
