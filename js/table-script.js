@@ -24,3 +24,17 @@ function getPlace(sender){
 	var data = $('#edit-table').find("#"+dayID).find('#Place').val();
 	$('#preview-table').find("#"+dayID).find('#Place').text(data);
 }
+
+function onImport(){
+	var days = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
+	for(var i = 0; i < 6; ++i){
+		for(var j = 0; j < 6; ++j){
+			var subject = $('#preview-table').find("#"+days[i]+j).find('#Subject').text();
+			$('#edit-table').find("#"+days[i]+j).find('#Subject').val(subject);
+			var period = $('#preview-table').find("#"+days[i]+j).find('#Period-Type').text();
+			$('#edit-table').find("#"+days[i]+j).find('#Period-Type').val(period);
+			var place = $('#preview-table').find("#"+days[i]+j).find('#Place').text();
+			$('#edit-table').find("#"+days[i]+j).find('#Place').val(place);
+		}
+	}
+}
