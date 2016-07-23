@@ -110,14 +110,21 @@
 	<div id="import" class="row">
 		<h3 class="title"><img src="images/import.png">Import a timetable</h3>
 		<div class="col-xs-0 col-md-1"></div>
-		<input id="xls" type="file" name="Upload" accept="application/vnd.ms-excel" onchange="ImportExcel();">
+		<div class="input-group" style="width: 250px;">
+			<label class="input-group-btn">
+				<span class="btn btn-info">Browse...
+					<input id="xls" type="file" name="Upload" style="display: none;" accept="application/vnd.ms-excel" onchange="ImportExcel();">
+				</span>
+			</label>
+			<input id="selectedfile" disabled="" style="cursor: default;" class="form-control" placeholder="No file selected">
+		</div>
 		<br>
 		<!-- Use Timetable -->
 		<div class="col-xs-0 col-md-1"></div>
 		<div id="use" class="row">
 			<h4 class="subtitle" style="margin-left: 7.5%;">Use one of the timetables provided by us</h4>
 			<div class="col-xs-0 col-md-1"></div>
-			<a class="btn btn-social btn-dropbox footer-social" target="_blank" href="https://www.dropbox.com/sh/dc787ckd5jlu0g4/AADwHhq8cyqQqI8VtIgCAHXIa?dl=0"><span class="fa fa-dropbox"></span>Dropbox</a>
+			<a class="btn btn-social btn-dropbox footer-social" style="margin-left: 10px" target="_blank" href="https://www.dropbox.com/sh/dc787ckd5jlu0g4/AADwHhq8cyqQqI8VtIgCAHXIa?dl=0"><span class="fa fa-dropbox"></span>Dropbox</a>
 		</div>
 	</div>
 

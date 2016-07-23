@@ -34,7 +34,10 @@ function ExportExcel(){
 }
 
 function ImportExcel(){
+	// Trigger file name
 	var fileInput = document.getElementById("xls");
+    $('#selectedfile').val(fileInput.value);
+    // Read the File
 	var validExts = new Array(".xlsx", ".xls");
     var fileExt = fileInput.value;
     fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
