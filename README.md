@@ -31,3 +31,11 @@ Here is the place where you can easily create and design your own Timetable
 
 - [Dropbox](https://www.dropbox.com/sh/dc787ckd5jlu0g4/AADwHhq8cyqQqI8VtIgCAHXIa?dl=0)
 
+# Pull Requests
+
+- Never push or merge directly to the `gh-pages` branch.
+- Create another branches for development and testing, if needed.
+- Code readability and comments are important.
+- Better to use the same code convention used.
+- `js` and `css` folders are for custom codes.
+- `js/src` and `css/src` are for downloaded codes.
